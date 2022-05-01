@@ -1,0 +1,1 @@
+_base_ = ['./config_b.py', './config_c.py']

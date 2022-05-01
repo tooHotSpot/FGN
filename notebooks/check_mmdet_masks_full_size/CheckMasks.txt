@@ -1,0 +1,98 @@
+Attention: sections under --- and *** were created in different days
+
+------------------ TwoStageDetector ------------------
+forward_train(...)
+>>> img_metas
+[{'filename': 'D:/Datasets/COCO/val2017/000000292155.jpg',
+  'ori_filename': '000000292155.jpg',
+  'ori_shape': (480, 640, 3),
+  'img_shape': (400, 533, 3),
+  'pad_shape': (416, 544, 3),
+  'scale_factor': array([0.8328125, 0.8333333, 0.8328125, 0.8333333], dtype=float32),
+  'flip': False,
+  'flip_direction': None,
+  'img_norm_cfg': {'mean': array([103.53 , 116.28 , 123.675], dtype=float32),
+   'std': array([1., 1., 1.], dtype=float32),
+   'to_rgb': False}}]
+>>> gt_masks
+[BitmapMasks(num_masks=2, height=416, width=544)]
+
+------------------ StandardRoIHead ------------------
+forward_train(...)
+SamplingResults
+[<SamplingResult({
+     'neg_bboxes': torch.Size([498, 4]),
+     'neg_inds': tensor([   3,    4,    5,   10,   15,   19,   32,   33,   35,   38,   49,   54, 56,   59,   60,   66,   68,   69,   74,   75,   76,   77,   78,   79,
+           84,   85,   92,   99,  104,  105,  107,  111,  112,  118,  122,  135, 137,  138,  141,  145,  147,  150,  151,  160,  161,  162,  163,  168,
+          178,  180,  182,  185,  186,  191,  193,  195,  201,  202,  209,  211, 217,  224,  225,  228,  240,  243,  251,  252,  254,  256,  259,  261,
+          262,  263,  264,  265,  267,  281,  283,  290,  292,  293,  296,  302, 305,  307,  309,  310,  318,  320,  323,  327,  328,  332,  334,  337,
+          338,  343,  347,  350,  363,  365,  369,  371,  373,  378,  380,  381, 385,  386,  389,  390,  399,  400,  401,  408,  415,  416,  417,  421,
+          431,  433,  434,  438,  440,  443,  457,  466,  468,  478,  483,  497, 501,  504,  506,  507,  508,  515,  524,  525,  526,  527,  530,  532,
+          534,  539,  540,  542,  548,  549,  550,  553,  556,  557,  563,  564, 565,  574,  576,  580,  583,  591,  594,  595,  598,  601,  602,  603,
+          608,  612,  614,  623,  626,  627,  629,  635,  636,  640,  654,  656, 662,  668,  675,  679,  681,  682,  683,  684,  685,  688,  696,  703,
+          709,  710,  714,  716,  720,  721,  724,  730,  745,  762,  765,  766, 767,  776,  781,  785,  787,  792,  797,  798,  808,  809,  810,  812,
+          813,  816,  818,  823,  824,  830,  834,  836,  837,  843,  847,  849, 851,  861,  862,  863,  864,  871,  874,  879,  880,  883,  888,  889,
+          892,  893,  895,  896,  898,  905,  915,  917,  925,  931,  948,  951, 960,  967,  972,  973,  985,  988,  994, 1002, 1003, 1004, 1010, 1013,
+         1014, 1018, 1020, 1021, 1022, 1026, 1027, 1031, 1037, 1039, 1049, 1054, 1056, 1063, 1064, 1066, 1072, 1076, 1083, 1087, 1091, 1096, 1100, 1107,
+         1108, 1110, 1114, 1115, 1123, 1125, 1133, 1135, 1140, 1143, 1146, 1147, 1153, 1155, 1157, 1158, 1160, 1163, 1164, 1167, 1168, 1173, 1183, 1185,
+         1190, 1196, 1200, 1207, 1208, 1222, 1226, 1228, 1229, 1233, 1237, 1239, 1241, 1245, 1247, 1248, 1250, 1252, 1253, 1254, 1255, 1256, 1285, 1292,
+         1294, 1296, 1314, 1323, 1326, 1331, 1333, 1336, 1338, 1345, 1353, 1358, 1359, 1361, 1363, 1365, 1367, 1374, 1386, 1387, 1389, 1396, 1403, 1417,
+         1419, 1421, 1422, 1424, 1425, 1428, 1431, 1436, 1441, 1443, 1444, 1448, 1449, 1454, 1457, 1459, 1468, 1474, 1475, 1484, 1485, 1486, 1489, 1492,
+         1503, 1505, 1513, 1517, 1519, 1520, 1525, 1528, 1533, 1536, 1538, 1548, 1549, 1551, 1552, 1553, 1559, 1575, 1578, 1581, 1582, 1588, 1590, 1594,
+         1610, 1617, 1621, 1630, 1633, 1645, 1648, 1654, 1661, 1667, 1668, 1670, 1678, 1679, 1685, 1688, 1692, 1693, 1694, 1702, 1704, 1706, 1707, 1708,
+         1720, 1722, 1726, 1729, 1732, 1740, 1741, 1743, 1745, 1747, 1748, 1749, 1750, 1751, 1752, 1754, 1757, 1759, 1762, 1766, 1773, 1775, 1776, 1782,
+         1794, 1802, 1806, 1809, 1810, 1812, 1813, 1814, 1821, 1836, 1837, 1848, 1850, 1852, 1854, 1870, 1874, 1888, 1890, 1893, 1901, 1907, 1911, 1918,
+         1923, 1931, 1932, 1933, 1937, 1938, 1947, 1950, 1954, 1955, 1957, 1965, 1967, 1973, 1974, 1984, 1996, 1998], device='cuda:0'),
+     'num_gts': 2,
+     'pos_assigned_gt_inds': tensor([0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0], device='cuda:0'),
+     'pos_bboxes': torch.Size([14, 4]),
+     'pos_inds': tensor([   0,    1,    2,   21,   90,  109,  167,  272,  289,  499,  817, 1405, 1481, 1900], device='cuda:0'),
+     'pos_is_gt': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], device='cuda:0', dtype=torch.uint8)
+ }) at 0x20763e74048>]
+
+*************************** Pasted code to _mask_forward_train() ***************************
+print('MSG from standard_roi_head._mask_forward_train()')
+print('gt_masks', type(gt_masks), len(gt_masks))
+for i in range(len(gt_masks)):
+    print('-->', i, 'type', type(gt_masks[i]), 'len', len(gt_masks[i]))
+    # As it is a BitmapMask
+    print(gt_masks[i])
+
+print('mask results', 'type', type(mask_results), 'len', len(mask_results), 'keys', mask_results.keys())
+
+mask_pred = mask_results['mask_pred']
+print('mask_pred', 'type', type(mask_pred), 'len', len(mask_pred), 'shape', mask_pred.shape)
+if len(mask_pred) != 0:
+    print('-->', 0, 'type', type(mask_pred[0]), 'len', len(mask_pred[0]), 'shape', mask_pred[0].shape)
+
+print('mask_targets', 'type', type(mask_targets), 'len', len(mask_targets), 'shape', mask_targets.shape)
+if len(mask_targets) != 0:
+    print('-->', 0, 'type', type(mask_targets[0]), 'len', len(mask_targets[0]), 'shape', mask_targets[0].shape)
+
+print('MSG END')
+assert False
+
+*************************** Output ***************************
+MSG from standard_roi_head._mask_forward_train()
+gt_masks <class 'list'> 1
+--> 0 type <class 'mmdet.core.mask.structures.BitmapMasks'> len 3
+BitmapMasks(num_masks=3, height=320, width=480)
+mask results type <class 'dict'> len 2 keys dict_keys(['mask_pred', 'mask_feats'])
+mask_pred type <class 'torch.Tensor'> len 36 shape torch.Size([36, 80, 14, 14])
+--> 0 type <class 'torch.Tensor'> len 80 shape torch.Size([80, 14, 14])
+mask_targets type <class 'torch.Tensor'> len 36 shape torch.Size([36, 14, 14])
+--> 0 type <class 'torch.Tensor'> len 14 shape torch.Size([14, 14])
+MSG END
+...
+  File "/home/neo/PycharmProjects/Course1/venv/lib/python3.8/site-packages/mmdet/models/roi_heads/standard_roi_head.py", line 196, in _mask_forward_train
+    assert False
+AssertionError
+
+Complement to the /home/neo/PycharmProjects/Course1/mmdet-repo/tools/train.py
+import sys
+args = [
+    '/home/neo/PycharmProjects/Course1/notebooks/check_mmdet_masks_full_size/my_mask_rcnn_r50_caffe_c4_1x_coco.py'
+]
+def_sys_argv = sys.argv[0]
+sys.argv = [def_sys_argv] + args
+main()
