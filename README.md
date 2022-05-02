@@ -19,6 +19,8 @@ Work done under the supervision of E.V.Razinkov [razinkov.ai](https://razinkov.a
 - Models trained in COCO2VOC regime  
     - From scratch (lower than in the article)
     - With DenseCL backbone, i.e. not violating few-shot learning rules (better than in the article)
+- VOC instance segmentation dataset with annotation errors description and examples
+- Few-shot novel classes dataset collection script (N **instances (not images)**  of K classes from an arbitrary dataset)
 
 ## Disclaimer
 
